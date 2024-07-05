@@ -11,7 +11,7 @@ def main():
     population = init_population()
     population = sorted(population, key=lambda x: fitness(x), reverse=True)
 
-    for _ in range(EPOCHS):
+    for epoch_no in range(EPOCHS):
         next_gen = []
         for index in range(len(population)):
             v1 = population[index]
@@ -21,12 +21,19 @@ def main():
 
         population = next_gen
         population = sorted(population, key=lambda x: fitness(x), reverse=True)
+        print_top(population, epoch_no)
 
     maximum = population[0]
     y = fitness(maximum)
 
+    print()
     print(f"Maximum: {maximum}, Fitness: {y}")
 
+
+def print_top(population, epoch):
+    print(f"Epoch {epoch + 1}:")
+    for index, value in enumerate(population[:5]):
+        print(f"\t{index + 1}. {value} {fitness(value)}")
 
 
 def merge(v1, v2):

@@ -3,7 +3,7 @@
 ### Integrantes
 - Gustavo González - 21438
 - José Pablo Orellana - 21970
-- Diego Leiva - 
+- Diego Leiva - 21752
 
 
 ### Program output:
